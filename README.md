@@ -22,7 +22,7 @@ Then input the day you want to create in `./src/days`
 ```
 day_2
 ```
-This will create a file in `./src/days/day_2` and populate it with some starting code.
+This will create a file in `./src/days/day_2.rs` and populate it with some starting code.
 
 ## Todo
 - simplify structure
