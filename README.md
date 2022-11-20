@@ -1,16 +1,29 @@
 # Advent of code in Rust
 
-To run each day you can do:
+## How to use
+
+To run all days:
 ```
-cargo run day_0
+cargo run all
 ```
 
-To run the tests you can do:
+To run the tests:
 ```
-cargo run test
+cargo test
 ```
+
+## Scripts
+
+To start a day:
+```
+./scripts/begin_day.sh
+```
+Then input the day you want to create in `./src/days`
+```
+day_2
+```
+This will create a file in `./src/days/day_2` and populate it with some starting code.
 
 ## Todo
-- add a way to run all days in one (with completion times etc.)
-- read in data automatically
-- 
+- simplify structure
+- auto create template from template file with script

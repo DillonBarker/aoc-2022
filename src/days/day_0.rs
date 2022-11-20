@@ -1,4 +1,9 @@
-pub fn solve(input: String) {
+use crate::helpers::helpers::get_input_in_lines;
+
+const DAY: &str = "day_0";
+
+pub fn solve() {
+	let input = get_input_in_lines(DAY);
 	solve_a(input.clone());
 	solve_b(input);
 }
@@ -17,7 +22,7 @@ fn solve_a(input: String) -> i32 {
 		}
 	};
 
-	println!("Day 0 part A answer is: {}", count);
+	println!("{} part A answer is: {}", DAY, count);
 	return count
 }
 
@@ -43,7 +48,7 @@ fn solve_b(input: String) -> i32 {
 		}
 	};
 
-	println!("Day 0 part B answer is: {}", count);
+	println!("{} part B answer is: {}", DAY, count);
 	return count
 }
 
@@ -52,18 +57,17 @@ mod tests {
     use super::solve_a;
 		use super::solve_b;
 
-		const INPUT_1: &str = "199 200 208 210 200 207 240 269 260 263";
-		const INPUT_2: &str = "199 200 208 210 200 207 240 269 260 263";
+		const INPUT: &str = "199 200 208 210 200 207 240 269 260 263";
 
 		#[test]
     fn solve_a_returns_count() {
-			let result = solve_a(INPUT_1.to_string());
+			let result = solve_a(INPUT.to_string());
 			assert_eq!(result, 7);
 		}
 
 		#[test]
     fn solve_b_returns_count() {
-			let result = solve_b(INPUT_2.to_string());
+			let result = solve_b(INPUT.to_string());
 			assert_eq!(result, 5);
 		}
 }

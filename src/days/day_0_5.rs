@@ -1,4 +1,9 @@
-pub fn solve(input: String) {
+use crate::helpers::helpers::get_input_in_lines;
+
+const DAY: &str = "day_0_5";
+
+pub fn solve() {
+	let input = get_input_in_lines(DAY);
 	solve_a(input.clone());
 	solve_b(input);
 }
@@ -28,7 +33,7 @@ fn solve_a(input: String) -> i32 {
 		
 	let ans = hoz * depth;
 
-	println!("Day 0_5 part A answer is: {}", ans);
+	println!("{} part A answer is: {}", DAY, ans);
 	return ans
 }
 
@@ -59,7 +64,7 @@ fn solve_b(input: String) -> i32 {
 		
 	let ans = hoz * depth;
 
-	println!("Day 0_5 part B answer is: {}", ans);
+	println!("{} part B answer is: {}", DAY, ans);
 	return ans
 }
 
