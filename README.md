@@ -26,4 +26,4 @@ This will create a file in `./src/days/day_2.rs` and populate it with some start
 
 ## Todo
 - simplify structure
-- auto create template from template file with script
+- add compilation times for solutions
