@@ -1,9 +1,9 @@
-use crate::helpers::helpers::get_input_in_lines;
+use crate::helpers::helpers::get_input_as_string;
 
 const DAY: &str = "day_0_5";
 
 pub fn solve() {
-	let input = get_input_in_lines(DAY);
+	let input = get_input_as_string(DAY);
 	solve_a(input.clone());
 	solve_b(input);
 }
