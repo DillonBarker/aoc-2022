@@ -1,4 +1,4 @@
-use crate::helpers::helpers::get_input_in_lines;
+use crate::helpers::get_input_in_lines;
 
 const DAY: &str = "day_";
 
