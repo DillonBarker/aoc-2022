@@ -1,5 +1,12 @@
 # Advent of code in Rust
 
+
+                  _~^~^~_
+              \) /  o o  \ (/
+                '_   ¬   _'
+                | '-----' |
+
+
 ## How to use
 
 To run all days:
