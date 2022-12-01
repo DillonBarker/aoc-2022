@@ -17,4 +17,8 @@ fn main() {
 	if args[1] == "0.5" {
 		days::day_0_5::solve();
 	}
+	
+	if args[1] == "1" {
+		days::day_1::solve();
+	}
 }
