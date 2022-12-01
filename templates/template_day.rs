@@ -1,21 +1,26 @@
 use crate::helpers::open_file;
 
-use std::fs::File;
-use std::io::{prelude::*, BufReader};
+use std::io::prelude::*;
 
 pub fn solve() {
-	match open_file("day_") {
+	match open_file("day_1") {
 		Ok(reader) => {
-			solve_a(reader);
+			let lines: Vec<String> = reader.lines().
+				map(|item| item.unwrap()).
+				collect();
+			solve_a(lines);
 		},
 		Err(e) => {
 			panic!("crash and burn: {}", e);
 		}
 	};
 
-	match open_file("day_") {
+	match open_file("day_1") {
 		Ok(reader) => {
-			solve_b(reader);
+			let lines: Vec<String> = reader.lines().
+				map(|item| item.unwrap()).
+				collect();
+			solve_b(lines);
 		},
 		Err(e) => {
 			panic!("crash and burn: {}", e);
@@ -23,34 +28,43 @@ pub fn solve() {
 	};
 }
 
-fn solve_a(reader: BufReader<File>) -> i32  {
-	let num: i32 = 0;
-	println!("Day 1 part a: {}", num);
-	return num;
+fn solve_a(lines: Vec<String>) -> i32  {
+	let mut highest_cal: i32 = 0;
+
+	println!("Day 1 part a: {}", highest_cal);
+	return highest_cal
 }
 
-fn solve_b(reader: BufReader<File>) -> i32  {
-	let num: i32 = 0;
-	println!("Day 1 part b: {}", num);
-	return num;
-}
+fn solve_b(lines: Vec<String>) -> i32  {
+	let mut total_cal: i32 = 0;
 
+	println!("Day 1 part b: {}", total_cal);
+	return total_cal;
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
-		const INPUT: &str = "";
-
-		#[test]
+    #[test]
     fn solve_a_returns_count() {
-			let result = solve_a(INPUT.to_string());
-			assert_eq!(result, 7);
-		}
+        let test_input: Vec<String> = vec!["1000".to_string(), "2000".to_string(), 
+            "3000".to_string(), "".to_string(), "4000".to_string(), "".to_string(), 
+            "5000".to_string(), "6000".to_string(), "".to_string(), "7000".to_string(), 
+            "8000".to_string(), "9000".to_string(), "".to_string(), "10000".to_string()];
 
-		#[test]
+        let result = solve_a(test_input);
+        assert_eq!(result, 24000);
+    }
+
+    #[test]
     fn solve_b_returns_count() {
-			let result = solve_b(INPUT.to_string());
-			assert_eq!(result, 5);
-		}
+        let test_input: Vec<String> = vec!["1000".to_string(), "2000".to_string(), 
+            "3000".to_string(), "".to_string(), "4000".to_string(), "".to_string(), 
+            "5000".to_string(), "6000".to_string(), "".to_string(), "7000".to_string(), 
+            "8000".to_string(), "9000".to_string(), "".to_string(), "10000".to_string()];
+
+        let result = solve_b(test_input);
+        assert_eq!(result, 41000);
+    }
 }

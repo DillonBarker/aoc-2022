@@ -54,9 +54,10 @@ fn solve_b(lines: Vec<String>) -> i32  {
 	let mut highest_cal: i32 = 0;
 	let mut second_highest_cal: i32 = 0;
 	let mut third_highest_cal: i32 = 0;
-
-	let mut current_cal: i32 = 0;
-	for line in lines {
+    
+    let mut current_cal: i32 = 0;
+	
+    for line in lines {
 		
 
 		if line != "" {
@@ -87,8 +88,6 @@ fn solve_b(lines: Vec<String>) -> i32  {
 mod tests {
     use super::*;
     
-
-
     #[test]
     fn solve_a_returns_count() {
         let test_input: Vec<String> = vec!["1000".to_string(), "2000".to_string(), 
