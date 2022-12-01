@@ -1,31 +1,44 @@
-use crate::helpers::get_input_in_lines;
+use crate::helpers::open_file;
 
-const DAY: &str = "day_";
+use std::fs::File;
+use std::io::{prelude::*, BufReader};
 
 pub fn solve() {
-	let input = get_input_in_lines(DAY);
-	solve_a(input.clone());
-	solve_b(input);
+	match open_file("day_") {
+		Ok(reader) => {
+			solve_a(reader);
+		},
+		Err(e) => {
+			panic!("crash and burn: {}", e);
+		}
+	};
+
+	match open_file("day_") {
+		Ok(reader) => {
+			solve_b(reader);
+		},
+		Err(e) => {
+			panic!("crash and burn: {}", e);
+		}
+	};
 }
 
-fn solve_a(input: String) -> i32 {
-	let mut count: i32 = 0;
-
-	println!("{} part A answer is: {}", DAY, count);
-	return count
+fn solve_a(reader: BufReader<File>) -> i32  {
+	let num: i32 = 0;
+	println!("Day 1 part a: {}", num);
+	return num;
 }
 
-fn solve_b(input: String) -> i32 {
-	let mut count: i32 = 0;
-
-	println!("{} part B answer is: {}", DAY, count);
-	return count
+fn solve_b(reader: BufReader<File>) -> i32  {
+	let num: i32 = 0;
+	println!("Day 1 part b: {}", num);
+	return num;
 }
+
 
 #[cfg(test)]
 mod tests {
-    use super::solve_a;
-		use super::solve_b;
+    use super::*;
 
 		const INPUT: &str = "";
 

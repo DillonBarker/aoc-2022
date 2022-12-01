@@ -1,28 +1,38 @@
-use std::fs::File;
-use std::io::{self, prelude::*, BufReader};
+use crate::helpers::open_file;
 
-
-// const DAY: &str = "day_1";
+use std::io::prelude::*;
 
 pub fn solve() {
-	solve_a();
-	solve_b();
+	match open_file("day_1") {
+		Ok(reader) => {
+			let lines: Vec<String> = reader.lines().
+				map(|item| item.unwrap()).
+				collect();
+			solve_a(lines);
+		},
+		Err(e) => {
+			panic!("crash and burn: {}", e);
+		}
+	};
+
+	match open_file("day_1") {
+		Ok(reader) => {
+			let lines: Vec<String> = reader.lines().
+				map(|item| item.unwrap()).
+				collect();
+			solve_b(lines);
+		},
+		Err(e) => {
+			panic!("crash and burn: {}", e);
+		}
+	};
 }
 
-fn solve_a() -> io::Result<()>  {
-	let file = File::open("inputs/day_1.txt")?;
-	let reader = BufReader::new(file);
-
+fn solve_a(lines: Vec<String>) -> i32  {
 	let mut highest_cal: i32 = 0;
-
-	let lines: Vec<String> = reader.lines().
-		map(|item| item.unwrap()).
-		collect();
 	
 	let mut current_cal: i32 = 0;
 	for line in lines {
-		
-
 		if line != "" {
 			current_cal = current_cal + line.parse::<i32>().unwrap();
 		}
@@ -36,21 +46,14 @@ fn solve_a() -> io::Result<()>  {
 		}
 	}
 
-	println!("{}", highest_cal);
-	Ok(())
+	println!("Day 1 part a: {}", highest_cal);
+	return highest_cal
 }
 
-fn solve_b() -> io::Result<()>  {
-	let file = File::open("inputs/day_1.txt")?;
-	let reader = BufReader::new(file);
-
+fn solve_b(lines: Vec<String>) -> i32  {
 	let mut highest_cal: i32 = 0;
 	let mut second_highest_cal: i32 = 0;
 	let mut third_highest_cal: i32 = 0;
-
-	let lines: Vec<String> = reader.lines().
-		map(|item| item.unwrap()).
-		collect();
 
 	let mut current_cal: i32 = 0;
 	for line in lines {
@@ -75,7 +78,7 @@ fn solve_b() -> io::Result<()>  {
 			current_cal = 0;
 		}
 	}
-
-	println!("{}", highest_cal + second_highest_cal + third_highest_cal);
-	Ok(())
+	let total_cal = highest_cal + second_highest_cal + third_highest_cal;
+	println!("Day 1 part b: {}", total_cal);
+	return total_cal;
 }
