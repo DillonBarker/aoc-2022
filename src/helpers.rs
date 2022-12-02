@@ -19,6 +19,6 @@ pub fn open_file(day: &str) -> Result<BufReader<File>, Error> {
 	file_path.push_str(day);
 	file_path.push_str(&txt);		
 
-	let file = File::open("inputs/day_1.txt")?;
+	let file = File::open(file_path)?;
 	return Ok(BufReader::new(file));
 }
