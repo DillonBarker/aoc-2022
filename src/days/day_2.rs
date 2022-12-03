@@ -99,7 +99,7 @@ fn solve_a(lines: Vec<String>) -> i32  {
         }
     }
 
-	println!("Day 1 part a: {}", score);
+	println!("Day 2 part a: {}", score);
 	return score
 }
 
@@ -115,69 +115,69 @@ fn solve_b(lines: Vec<String>) -> i32  {
         };
 
         if columns.second == "X" {
-            // i need to lose
             if columns.first == "A" {
-                score = score + 3
+                score = score + SCISSORS
             }
             if columns.first == "B" {
-                score = score + 1
+                score = score + ROCK
             }
             if columns.first == "C" {
-                score = score + 2
+                score = score + PAPER
             }
         }
         if columns.second == "Y" {
-            // i need to draw
+            score = score + DRAW;
             if columns.first == "A" {
-                score = score + 4
+                score = score + ROCK 
             }
             if columns.first == "B" {
-                score = score + 5
+                score = score + PAPER
             }
             if columns.first == "C" {
-                score = score + 6
+                score = score + SCISSORS
             }
         }
         if columns.second == "Z" {
-            // i need to win
+            score = score + WIN;
             if columns.first == "A" {
-                score = score + 6 + 2
+                score = score + PAPER
             }
             if columns.first == "B" {
-                score = score + 6 + 3
+                score = score + SCISSORS
             }
             if columns.first == "C" {
-                score = score + 6 + 1
+                score = score + ROCK
             }
         }
     }
 
-	println!("Day 1 part b: {}", score);
+	println!("Day 2 part b: {}", score);
 	return score
 }
 
-// #[cfg(test)]
-// mod tests {
-//     use super::*;
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-//     #[test]
-//     fn solve_a_returns_count() {
-//         // let test_input: Vec<String> = vec![A Y
-//         // B X
-//         // C Z];
+    #[test]
+    fn solve_a_returns_count() {
+        let test_input: Vec<String> = vec![
+            "A Y".to_string(),
+            "B X".to_string(),
+            "C Z".to_string()];
 
-//         let result = solve_a(test_input);
-//         assert_eq!(result, 24000);
-//     }
+        let result = solve_a(test_input);
+        assert_eq!(result, 15);
+    }
 
-//     #[test]
-//     fn solve_b_returns_count() {
-//         let test_input: Vec<String> = vec!["1000".to_string(), "2000".to_string(), 
-//             "3000".to_string(), "".to_string(), "4000".to_string(), "".to_string(), 
-//             "5000".to_string(), "6000".to_string(), "".to_string(), "7000".to_string(), 
-//             "8000".to_string(), "9000".to_string(), "".to_string(), "10000".to_string()];
+    #[test]
+    fn solve_b_returns_count() {
+        let test_input: Vec<String> = vec![
+            "A Y".to_string(),
+            "B X".to_string(),
+            "C Z".to_string()];
 
-//         let result = solve_b(test_input);
-//         assert_eq!(result, 41000);
-//     }
-// }
+        let result = solve_b(test_input);
+        assert_eq!(result, 12);
+    }
+}
