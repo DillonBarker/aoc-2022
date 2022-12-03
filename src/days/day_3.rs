@@ -170,4 +170,27 @@ mod tests {
         let result = solve_b(test_input);
         assert_eq!(result, 70);
     }
+
+    #[test]
+    fn get_score_returns_score() {
+        let result = get_score('a');
+        assert_eq!(result, 1);
+    }
+
+    #[test]
+    fn find_common_char_returns_char() {
+        let result = find_common_char(&"elf".to_string(), &"loam".to_string());
+        assert_eq!(result, 'l');
+    }
+
+    #[test]
+    fn find_common_char_with_three_returns_char() {
+        let result = find_common_char_with_three(
+            &"this".to_string(), 
+            &"that".to_string(), 
+            &"hole".to_string()
+        );
+        assert_eq!(result, 'h');
+    }
+
 }
