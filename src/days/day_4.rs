@@ -88,7 +88,7 @@ fn solve_b(lines: Vec<String>) -> i32  {
             }
         }
     }
-	println!("Day 4 part a: {}", score);
+	println!("Day 4 part b: {}", score);
 	return score
 }
 
