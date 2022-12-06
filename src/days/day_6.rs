@@ -29,8 +29,8 @@ pub fn solve() {
 }
 
 fn solve_a(lines: Vec<String>) -> i32  {
-	let mut total: i32 = 1;
-
+	let counter: i32 = 0;
+	
 	for line in lines {
 		let chars: Vec<&str> = line.split("").filter(|char| !char.is_empty()).collect();
 		
@@ -68,12 +68,12 @@ fn solve_a(lines: Vec<String>) -> i32  {
 		}
 	}
 
-	println!("Day 1 part a: {}", total);
-	return total
+	println!("Day 1 part a: {}", counter);
+	return counter
 }
 
 fn solve_b(lines: Vec<String>) -> i32  {
-	let mut total: i32 = 1;
+	let counter: i32 = 1;
 
 	for line in lines {
 		let chars: Vec<&str> = line.split("").filter(|char| !char.is_empty()).collect();
@@ -233,8 +233,8 @@ fn solve_b(lines: Vec<String>) -> i32  {
 		}
 	}
 
-	println!("Day  part a: {}", total);
-	return total
+	println!("Day  part a: {}", counter);
+	return counter
 }
 
 #[cfg(test)]

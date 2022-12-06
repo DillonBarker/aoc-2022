@@ -69,7 +69,6 @@ fn move_containers(movement: Move, mut stacks: Vec<Vec<String>>) -> Vec<Vec<Stri
     let mut containers: Vec<String> = Vec::new();
     let mut x: usize = 0;
     while x < movement.amount {
-        dbg!("here", movement.amount);
         if stacks[(movement.from - 1)].is_empty() { break };
         let container = stacks[(movement.from - 1)].remove(0);
         containers.insert_from_slice(0 ,&[container]);
@@ -85,7 +84,6 @@ fn move_containers_b(movement: Move, mut stacks: Vec<Vec<String>>) -> Vec<Vec<St
     let mut containers: Vec<String> = Vec::new();
     let mut x: usize = 0;
     while x < movement.amount {
-        dbg!("here", movement.amount);
         if stacks[(movement.from - 1)].is_empty() { break };
         let container = stacks[(movement.from - 1)].remove(0);
         containers.push(container);
@@ -149,12 +147,10 @@ fn solve_a(lines: Vec<String>) -> String  {
             // this is just a line break, i could split here
         } else if line.contains("move") {
             let movement: Move = parse_line(line.clone());
-            dbg!(line);
             stacks = move_containers(movement, stacks);
         }
     }
 
-    println!("{:?}", stacks);
     let mut str: String = "".to_owned();
     for stack in stacks {
         str.push_str(&stack[0])
@@ -198,18 +194,12 @@ fn solve_b(lines: Vec<String>) -> String  {
                 }
                 counter = counter + 1;
             }
-        } else if !line.contains('[') && !line.contains("move") {
-            // this is the numbering of the crates we might be able to skip this
-        } else if line.is_empty() {
-            // this is just a line break, i could split here
         } else if line.contains("move") {
             let movement: Move = parse_line(line.clone());
-            dbg!(line);
             stacks = move_containers_b(movement, stacks);
         }
     }
 
-    println!("{:?}", stacks);
     let mut str: String = "".to_owned();
     for stack in stacks {
         str.push_str(&stack[0])
