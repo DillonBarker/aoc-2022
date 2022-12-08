@@ -22,3 +22,11 @@ pub fn open_file(day: &str) -> Result<BufReader<File>, Error> {
 	let file = File::open(file_path)?;
 	return Ok(BufReader::new(file));
 }
+
+pub fn gigit(c: char) -> Option<i32> {
+    if c as u32 >= '0' as u32 && c as u32 <= '9' as u32 {
+        Some((c as u32 - '0' as u32).try_into().unwrap())
+    } else {
+        None
+    }
+}

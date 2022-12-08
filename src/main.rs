@@ -33,4 +33,11 @@ fn main() {
     if args[1] == "6" {
         days::day_6::solve();
     }
+
+    if args[1] == "7" {
+        // days::day_7::solve();
+    }
+    if args[1] == "8" {
+        days::day_8::solve();
+    }
 }

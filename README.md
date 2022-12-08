@@ -38,4 +38,4 @@ This will create a file in `./src/days/day_2.rs` and populate it with some start
 
 ## Todo
 - simplify structure, dont think pub mod all days in the days.rs is very good
-- add compilation times for solutions? using tool
+- add compilation times for solutions? using tool bencher, criterion
